@@ -1,44 +1,48 @@
 /* ==========================================================================
    BRASFOND - SISTEMA DE FDS (FICHAS COM DADOS DE SEGURANÇA)
-   Design System: Clean Light Corporate & Industrial
-   Fundo Claro / Branco com alto contraste e legibilidade
+   Design System Oficial: Identidade Visual Brasfond 50 Anos (1976-2026)
+   Paleta: Vermelho Brasfond (#C8102E), Dourado 50 Anos (#C59B5F) e Branco Puro
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Cores Principais - Tema Claro / Branco */
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-surface: #ffffff;
-  --bg-surface-hover: #f1f5f9;
-  --bg-card: #ffffff;
+  /* Cores Oficiais da Marca BRASFOND */
+  --brasfond-red: #C8102E;
+  --brasfond-red-dark: #9B0A20;
+  --brasfond-red-light: #FFF1F2;
+  --brasfond-red-border: #FECDD3;
+  --brasfond-gold: #C59B5F;
+  --brasfond-gold-dark: #A37B3E;
+
+  /* Superfícies & Fundos */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F1F5F9;
+  --bg-card: #FFFFFF;
   
-  /* Cores de Destaque Corporativo Brasfond */
-  --accent-cyan: #0284c7;
-  --accent-blue: #0072ce;
-  --accent-blue-dark: #0056b3;
-  --accent-blue-glow: rgba(0, 114, 206, 0.15);
-  --accent-amber: #d97706;
-  --accent-red: #dc2626;
+  /* Cores de Alerta & Status */
+  --accent-amber: #D97706;
+  --accent-red: #DC2626;
   --accent-green: #059669;
 
-  /* Tipografia & Texto - Alto Contraste */
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --text-inverse: #ffffff;
+  /* Tipografia & Texto */
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
 
   /* Bordas e Sombras */
-  --border-subtle: #e2e8f0;
-  --border-card: #e2e8f0;
-  --border-focus: #0072ce;
+  --border-subtle: #E2E8F0;
+  --border-card: #E2E8F0;
+  --border-focus: var(--brasfond-red);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 12px 28px rgba(0, 114, 206, 0.12);
+  --shadow-lg: 0 12px 28px rgba(200, 16, 46, 0.12);
   --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --radius-full: 9999px;
 
   /* Fontes */
@@ -55,8 +59,8 @@
 body {
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(0, 114, 206, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.03) 0%, transparent 45%);
+    radial-gradient(circle at 10% 10%, rgba(200, 16, 46, 0.02) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(197, 155, 95, 0.03) 0%, transparent 45%);
   background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -66,22 +70,22 @@ body {
 }
 
 /* ==========================================================================
-   Header & Navbar (Branco Corporativo)
+   Header & Navbar (Identidade Brasfond 50 Anos)
    ========================================================================== */
 .header-top {
-  border-bottom: 1px solid var(--border-subtle);
-  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 2px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 50;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
 .header-container {
   max-width: 1360px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,45 +95,56 @@ body {
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
-.brand-icon {
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, #0072ce 0%, #0284c7 100%);
-  border-radius: var(--radius-md);
+.brand-logo-link {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.25rem;
-  box-shadow: 0 4px 12px rgba(0, 114, 206, 0.25);
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.brand-logo-img:hover {
+  transform: scale(1.02);
+}
+
+.brand-divider {
+  width: 1px;
+  height: 34px;
+  background: #CBD5E1;
 }
 
 .brand-info h1 {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
   color: var(--text-primary);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .brand-info h1 span {
-  color: var(--accent-blue);
-  background: rgba(0, 114, 206, 0.08);
+  color: var(--brasfond-red);
+  background: var(--brasfond-red-light);
+  border: 1px solid var(--brasfond-red-border);
   padding: 0.1rem 0.45rem;
   border-radius: var(--radius-sm);
-  font-size: 1.15rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
 .brand-info p {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -143,9 +158,9 @@ body {
 }
 
 .badge-emergency-call {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  color: #b91c1c;
+  background: var(--brasfond-red-light);
+  border: 1px solid var(--brasfond-red-border);
+  color: var(--brasfond-red-dark);
   padding: 0.45rem 0.95rem;
   border-radius: var(--radius-full);
   font-size: 0.82rem;
@@ -158,28 +173,28 @@ body {
 }
 
 .badge-emergency-call:hover {
-  background: #fee2e2;
-  border-color: #f87171;
-  color: #991b1b;
+  background: #FFE4E6;
+  border-color: var(--brasfond-red);
+  color: var(--brasfond-red);
   transform: translateY(-1px);
 }
 
 .pulse-dot {
   width: 8px;
   height: 8px;
-  background-color: var(--accent-red);
+  background-color: var(--brasfond-red);
   border-radius: 50%;
   animation: pulse 1.8s infinite;
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); }
-  70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.6); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(200, 16, 46, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(200, 16, 46, 0); }
 }
 
 /* ==========================================================================
-   Hero & Controles de Busca (Fundo Claro)
+   Hero & Controles de Busca (Estilo Limpo Brasfond)
    ========================================================================== */
 .hero-section {
   padding: 2.5rem 1.5rem 1.5rem;
@@ -189,20 +204,20 @@ body {
 
 .hero-content {
   text-align: center;
-  max-width: 760px;
-  margin: 0 auto 2rem;
+  max-width: 780px;
+  margin: 0 auto 2.2rem;
 }
 
 .hero-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  color: var(--accent-blue);
+  gap: 0.45rem;
+  background: var(--brasfond-red-light);
+  border: 1px solid var(--brasfond-red-border);
+  color: var(--brasfond-red);
   font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.3rem 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.95rem;
   border-radius: var(--radius-full);
   margin-bottom: 0.9rem;
   text-transform: uppercase;
@@ -211,11 +226,11 @@ body {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 2.25rem;
   font-weight: 800;
   line-height: 1.25;
   margin-bottom: 0.8rem;
-  color: #0f172a;
+  color: #1E293B;
 }
 
 .hero-subtitle {
@@ -223,14 +238,15 @@ body {
   font-size: 1.05rem;
 }
 
-/* Barra de Pesquisa e Filtros (Card Branco) */
+/* Barra de Pesquisa e Filtros (Card Branco com Detalhe Brasfond) */
 .search-filter-wrapper {
-  background: #ffffff;
+  background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 1.25rem;
+  padding: 1.35rem;
   box-shadow: var(--shadow-md);
   margin-bottom: 2rem;
+  border-top: 3px solid var(--brasfond-red);
 }
 
 .search-box-container {
@@ -252,8 +268,8 @@ body {
 .search-input {
   width: 100%;
   padding: 0.95rem 3rem 0.95rem 3.2rem;
-  background: #f8fafc;
-  border: 1px solid #cbd5e1;
+  background: #F8F9FA;
+  border: 1px solid #CBD5E1;
   border-radius: var(--radius-md);
   color: var(--text-primary);
   font-size: 1rem;
@@ -263,9 +279,9 @@ body {
 
 .search-input:focus {
   outline: none;
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 0 3px rgba(0, 114, 206, 0.15);
-  background: #ffffff;
+  border-color: var(--brasfond-red);
+  box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.12);
+  background: #FFFFFF;
 }
 
 .search-clear-btn {
@@ -283,8 +299,8 @@ body {
 }
 
 .search-clear-btn:hover {
-  color: var(--text-primary);
-  background: #e2e8f0;
+  color: var(--brasfond-red);
+  background: #FEE2E2;
 }
 
 /* Pílulas de Categoria */
@@ -297,7 +313,7 @@ body {
 
 .category-label-txt {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -305,13 +321,13 @@ body {
 }
 
 .filter-btn {
-  background: #f1f5f9;
+  background: #F1F5F9;
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  padding: 0.55rem 1.1rem;
+  padding: 0.55rem 1.15rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
@@ -320,20 +336,20 @@ body {
 }
 
 .filter-btn:hover {
-  background: #e2e8f0;
+  background: #E2E8F0;
   color: var(--text-primary);
-  border-color: #cbd5e1;
+  border-color: #CBD5E1;
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, var(--accent-blue) 0%, #0284c7 100%);
-  color: #fff;
-  border-color: var(--accent-blue);
-  box-shadow: 0 2px 8px rgba(0, 114, 206, 0.3);
+  background: var(--brasfond-red);
+  color: #FFFFFF;
+  border-color: var(--brasfond-red);
+  box-shadow: 0 2px 8px rgba(200, 16, 46, 0.3);
 }
 
 .count-badge {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.07);
   padding: 0.1rem 0.45rem;
   border-radius: var(--radius-full);
   font-size: 0.72rem;
@@ -342,6 +358,7 @@ body {
 
 .filter-btn.active .count-badge {
   background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
 }
 
 /* ==========================================================================
@@ -361,7 +378,7 @@ body {
 }
 
 .results-count strong {
-  color: var(--accent-blue);
+  color: var(--brasfond-red);
   font-weight: 700;
 }
 
@@ -374,7 +391,7 @@ body {
 }
 
 /* ==========================================================================
-   Grid de Cartões dos Produtos Químicos (Cards Brancos)
+   Grid de Cartões dos Produtos Químicos
    ========================================================================== */
 .cards-grid {
   display: grid;
@@ -384,7 +401,7 @@ body {
 }
 
 .product-card {
-  background: #ffffff;
+  background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 1.35rem;
@@ -404,27 +421,27 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
-  opacity: 0.8;
+  background: var(--brasfond-red);
+  opacity: 0.85;
   transition: opacity 0.2s ease;
 }
 
 .product-card.risk-safe::before {
-  background: linear-gradient(90deg, #059669, #10b981);
+  background: linear-gradient(90deg, #059669, #10B981);
 }
 
 .product-card.risk-warning::before {
-  background: linear-gradient(90deg, #d97706, #f59e0b);
+  background: linear-gradient(90deg, #D97706, #F59E0B);
 }
 
 .product-card.risk-danger::before {
-  background: linear-gradient(90deg, #dc2626, #ef4444);
+  background: var(--brasfond-red);
 }
 
 .product-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: #cbd5e1;
+  border-color: #CBD5E1;
 }
 
 .product-card:hover::before {
@@ -435,11 +452,11 @@ body {
 /* Imagem do Produto no Card */
 .card-image-wrapper {
   width: 100%;
-  height: 210px;
+  height: 215px;
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: 1.1rem;
-  background: #f8fafc;
+  background: #F8F9FA;
   border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
@@ -465,10 +482,10 @@ body {
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.25rem 0.6rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
   border-radius: var(--radius-sm);
   letter-spacing: 0.03em;
 }
@@ -483,11 +500,11 @@ body {
 }
 
 .card-category-tag {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  color: #0369a1;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #334155;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
   text-transform: uppercase;
@@ -505,21 +522,21 @@ body {
 }
 
 .card-risk-badge.safe {
-  background: #ecfdf5;
+  background: #ECFDF5;
   color: #047857;
-  border: 1px solid #a7f3d0;
+  border: 1px solid #A7F3D0;
 }
 
 .card-risk-badge.warning {
-  background: #fffbeb;
-  color: #b45309;
-  border: 1px solid #fde68a;
+  background: #FFFBEB;
+  color: #B45309;
+  border: 1px solid #FDE68A;
 }
 
 .card-risk-badge.danger {
-  background: #fef2f2;
-  color: #b91c1c;
-  border: 1px solid #fecaca;
+  background: #FEF2F2;
+  color: var(--brasfond-red);
+  border: 1px solid #FECACA;
 }
 
 /* Corpo do Card */
@@ -530,15 +547,15 @@ body {
 .card-trade-name {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 700;
-  color: #0f172a;
+  font-weight: 800;
+  color: #0F172A;
   margin-bottom: 0.2rem;
   line-height: 1.3;
 }
 
 .card-chem-name {
   font-size: 0.86rem;
-  color: var(--accent-blue);
+  color: var(--brasfond-red);
   font-weight: 600;
   margin-bottom: 0.75rem;
   display: flex;
@@ -575,7 +592,7 @@ body {
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 1.1rem;
-  background: #f8fafc;
+  background: #F8F9FA;
   padding: 0.5rem 0.8rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
@@ -584,7 +601,7 @@ body {
 .ghs-strip-title {
   font-size: 0.7rem;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   margin-right: 0.2rem;
 }
@@ -607,7 +624,7 @@ body {
 
 .epis-title {
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -624,7 +641,7 @@ body {
 }
 
 .epi-chip {
-  background: #f1f5f9;
+  background: #F1F5F9;
   border: 1px solid var(--border-subtle);
   color: #334155;
   font-size: 0.72rem;
@@ -643,13 +660,13 @@ body {
 }
 
 .btn-open-fds {
-  background: linear-gradient(135deg, var(--accent-blue) 0%, #0284c7 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--brasfond-red) 0%, #A60C24 100%);
+  color: #FFFFFF;
   border: none;
   padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
   font-size: 0.92rem;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-body);
   cursor: pointer;
   display: flex;
@@ -657,12 +674,12 @@ body {
   justify-content: center;
   gap: 0.5rem;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 114, 206, 0.25);
+  box-shadow: 0 2px 8px rgba(200, 16, 46, 0.25);
 }
 
 .btn-open-fds:hover {
-  background: linear-gradient(135deg, #0056b3 0%, var(--accent-blue) 100%);
-  box-shadow: 0 4px 14px rgba(0, 114, 206, 0.35);
+  background: linear-gradient(135deg, var(--brasfond-red-dark) 0%, var(--brasfond-red) 100%);
+  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.35);
   transform: translateY(-1px);
 }
 
@@ -673,8 +690,8 @@ body {
 }
 
 .btn-drive-link {
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
   color: #047857;
   padding: 0.55rem 0.7rem;
   border-radius: var(--radius-md);
@@ -689,16 +706,16 @@ body {
 }
 
 .btn-drive-link:hover {
-  background: #d1fae5;
-  border-color: #6ee7b7;
-  color: #065f46;
+  background: #D1FAE5;
+  border-color: #6EE7B7;
+  color: #065F46;
   transform: translateY(-1px);
 }
 
 .btn-quick-sos {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
-  color: #b45309;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  color: #B45309;
   padding: 0.55rem 0.7rem;
   border-radius: var(--radius-md);
   font-size: 0.8rem;
@@ -712,13 +729,13 @@ body {
 }
 
 .btn-quick-sos:hover {
-  background: #fef3c7;
-  border-color: #fcd34d;
-  color: #92400e;
+  background: #FEF3C7;
+  border-color: #FCD34D;
+  color: #92400E;
 }
 
 .btn-print-card {
-  background: #f8fafc;
+  background: #F8F9FA;
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   padding: 0.55rem 0.7rem;
@@ -734,7 +751,7 @@ body {
 }
 
 .btn-print-card:hover {
-  background: #e2e8f0;
+  background: #E2E8F0;
   color: var(--text-primary);
 }
 
@@ -745,8 +762,8 @@ body {
   grid-column: 1 / -1;
   text-align: center;
   padding: 4rem 1.5rem;
-  background: #ffffff;
-  border: 1px dashed #cbd5e1;
+  background: #FFFFFF;
+  border: 1px dashed #CBD5E1;
   border-radius: var(--radius-lg);
 }
 
@@ -771,27 +788,27 @@ body {
 }
 
 .btn-reset-filters {
-  background: var(--accent-blue);
-  color: #fff;
+  background: var(--brasfond-red);
+  color: #FFFFFF;
   border: none;
   padding: 0.6rem 1.25rem;
   border-radius: var(--radius-md);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 
 .btn-reset-filters:hover {
-  background: var(--accent-blue-dark);
+  background: var(--brasfond-red-dark);
 }
 
 /* ==========================================================================
-   Footer (Branco com divisória suave)
+   Footer Oficial Brasfond (Vermelho #C8102E)
    ========================================================================== */
 .main-footer {
-  border-top: 1px solid var(--border-subtle);
-  background: #ffffff;
-  padding: 2.5rem 1.5rem;
+  background: var(--brasfond-red);
+  color: #FFFFFF;
+  padding: 1.5rem 1.5rem;
   margin-top: 4rem;
 }
 
@@ -799,31 +816,19 @@ body {
   max-width: 1360px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-bar {
+  width: 100%;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
-}
-
-.footer-compliance {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.footer-compliance strong {
-  color: var(--text-primary);
-}
-
-.footer-contacts {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-}
-
-.footer-contacts strong {
-  color: var(--accent-blue);
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.95);
+  gap: 1rem;
 }
 
 /* Responsividade Mobile */
@@ -837,6 +842,10 @@ body {
     align-items: flex-start;
   }
 
+  .brand-wrapper {
+    flex-wrap: wrap;
+  }
+
   .header-actions {
     width: 100%;
     justify-content: space-between;
@@ -847,7 +856,6 @@ body {
   }
 
   .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
   }
 }
