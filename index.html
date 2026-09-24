@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRASFOND - Catálogo de FDS de Produtos Químicos</title>
+  <meta name="description" content="Acesso rápido às FDS (Fichas com Dados de Segurança - ABNT NBR 14725 / GHS) de produtos químicos utilizados em obras de geotecnia e fundações Brasfond.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fds-modal.css">
+</head>
+<body>
+
+  <!-- Topo / Navbar de Identidade -->
+  <header class="header-top">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <div class="brand-icon">BF</div>
+        <div class="brand-info">
+          <h1>BRASFOND <span>FDS</span></h1>
+          <p>Fichas com Dados de Segurança • NBR 14725 / GHS</p>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <a href="tel:08007077022" class="badge-emergency-call" title="Central de Emergência Química">
+          <span class="pulse-dot"></span>
+          <span>Emergência 24h: <strong>0800-707-7022</strong></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seção Principal -->
+  <main class="hero-section">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Segurança Operacional & SMS
+      </div>
+      <h2 class="hero-title">FDS de Produtos Químicos em Campo</h2>
+      <p class="hero-subtitle">Selecione o card do produto químico para visualizar imediatamente a FDS oficial completa, condutas de emergência e EPIs recomendados.</p>
+    </div>
+
+    <!-- Barra de Pesquisa e Filtros Rápidos -->
+    <div class="search-filter-wrapper">
+      <div class="search-box-container">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="chemicalSearchInput" 
+          class="search-input" 
+          placeholder="Buscar produto por nome comercial, princípio ativo, CAS ou aplicação (ex: bentonita, polímero, óleo, resina)..."
+          autocomplete="off"
+        >
+        <button id="clearSearchBtn" class="search-clear-btn" title="Limpar busca" aria-label="Limpar busca">✕</button>
+      </div>
+
+      <div class="category-filter-list" id="categoryFilterContainer">
+        <span class="category-label-txt">Filtrar:</span>
+        <button class="filter-btn active" data-category="all">
+          Todos os Produtos <span class="count-badge" id="count-all">5</span>
+        </button>
+        <button class="filter-btn" data-category="oleos">
+          Óleos & Motores <span class="count-badge" id="count-oleos">2</span>
+        </button>
+        <button class="filter-btn" data-category="graxas">
+          Graxas Industriais <span class="count-badge" id="count-graxas">2</span>
+        </button>
+        <button class="filter-btn" data-category="fluidos">
+          Fluidos de Perfuração <span class="count-badge" id="count-fluidos">1</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Barra de Status e Contagem -->
+    <div class="results-bar">
+      <div class="results-count">
+        Exibindo <strong id="visibleProductsCount">0</strong> produtos químicos disponíveis
+      </div>
+      <div class="view-instructions">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        Clique em um card para abrir a FDS em 16 seções
+      </div>
+    </div>
+
+    <!-- Grade Dinâmica de Cartões -->
+    <div class="cards-grid" id="cardsGrid">
+      <!-- Injetado dinamicamente via app.js -->
+    </div>
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-compliance">
+        <strong>BRASFOND Fundações Especiais S/A</strong> • Sistema Integrado de Gestão SMS<br>
+        Em conformidade com a Norma Regulamentadora ABNT NBR 14725:2023 e GHS (Globally Harmonized System).
+      </div>
+      <div class="footer-contacts">
+        <span>SAMU: <strong>192</strong></span>
+        <span>Bombeiros: <strong>193</strong></span>
+        <span>ABIQUIM Pró-Química: <strong>0800-118-270</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       MODAL 1: VISUALIZADOR COMPLETO DE FDS (16 SEÇÕES NBR 14725)
+       ======================================================================= -->
+  <div class="modal-overlay" id="fdsModalOverlay" role="dialog" aria-modal="true">
+    <div class="modal-window">
+      <header class="modal-header">
+        <div class="modal-header-titles">
+          <div class="modal-subtitle" id="modalProductCategory">Categoria</div>
+          <h3 class="modal-title" id="modalProductName">Nome do Produto</h3>
+        </div>
+        <div class="modal-header-controls">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-modal-drive" id="btnModalDriveLink" title="Abrir arquivo PDF original no Google Drive">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            Ver PDF Oficial no Drive
+          </a>
+          <button class="btn-modal-print" id="btnPrintFds" title="Imprimir FDS oficial">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Imprimir
+          </button>
+          <button class="btn-modal-close" id="btnCloseFdsModal" aria-label="Fechar modal">✕</button>
+        </div>
+      </header>
+
+      <div class="modal-body" id="modalBodyContent">
+        <!-- Banner de Perigo e Pictogramas -->
+        <div class="fds-hazard-banner" id="modalHazardBanner">
+          <div class="hazard-banner-left">
+            <span class="hazard-word-badge" id="modalHazardWord">ATENÇÃO</span>
+            <div class="hazard-phrases" id="modalHazardPhrases"></div>
+          </div>
+          <div class="hazard-banner-diamonds" id="modalHazardDiamonds"></div>
+        </div>
+
+        <!-- Lista de Seções da FDS -->
+        <div class="fds-sections-container" id="modalSectionsList">
+          <!-- Injetado dinamicamente -->
+        </div>
+      </div>
+
+      <footer class="modal-footer">
+        <span>FDS Homologada para Canteiro de Obras • Departamento de Segurança BRASFOND</span>
+        <span>NBR 14725 / GHS</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL 2: POPUP RÁPIDO DE EMERGÊNCIA & PRIMEIROS SOCORROS
+       ======================================================================= -->
+  <div class="modal-overlay" id="sosModalOverlay" role="dialog" aria-modal="true">
+    <div class="modal-window emergency-modal-window">
+      <header class="modal-header">
+        <div class="modal-header-titles">
+          <div class="modal-subtitle" style="color: #fca5a5;">Ação Rápida de Campo</div>
+          <h3 class="modal-title" id="sosModalTitle">Conduta de Emergência</h3>
+        </div>
+        <button class="btn-modal-close" id="btnCloseSosModal" aria-label="Fechar">✕</button>
+      </header>
+
+      <div class="modal-body">
+        <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0.8rem;">
+          Procedimentos imediatos em caso de acidente com o produto <strong id="sosProductName" style="color: #fff;"></strong>:
+        </p>
+
+        <div class="emergency-grid" id="sosEmergencyGrid">
+          <!-- Injetado dinamicamente -->
+        </div>
+
+        <div class="emergency-call-card">
+          <div class="emergency-call-info">
+            <h4>Necessita de socorro imediato?</h4>
+            <p>Ligue diretamente para a central de emergência ou corpo de bombeiros.</p>
+          </div>
+          <a href="tel:08007077022" class="btn-dial">Discar 0800</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

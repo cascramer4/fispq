@@ -1,0 +1,459 @@
+/* ==========================================================================
+   BRASFOND - MODAL DE FDS (16 SEÇÕES NBR 14725) & POPUP DE EMERGÊNCIA
+   Design System: Clean Light Corporate & Industrial
+   ========================================================================== */
+
+/* Overlay do Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Caixa do Modal */
+.modal-window {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  transform: scale(0.96) translateY(15px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.modal-overlay.active .modal-window {
+  transform: scale(1) translateY(0);
+}
+
+/* Cabeçalho do Modal */
+.modal-header {
+  padding: 1.25rem 1.75rem;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.modal-subtitle {
+  font-size: 0.78rem;
+  color: var(--accent-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.modal-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-modal-drive {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-drive:hover {
+  background: #d1fae5;
+  border-color: #6ee7b7;
+  color: #065f46;
+}
+
+.btn-modal-print {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: var(--accent-blue);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-print:hover {
+  background: var(--accent-blue);
+  color: #fff;
+  border-color: var(--accent-blue);
+}
+
+.btn-modal-close {
+  background: #f1f5f9;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-close:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+/* Corpo com Rolagem */
+.modal-body {
+  padding: 1.75rem;
+  overflow-y: auto;
+  color: var(--text-primary);
+  background: #ffffff;
+}
+
+/* Alerta Resumo de Perigo dentro da FDS */
+.fds-hazard-banner {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.fds-hazard-banner.danger {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.fds-hazard-banner.safe {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.hazard-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hazard-word-badge {
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+}
+
+.hazard-word-badge.PERIGO {
+  background: #dc2626;
+  color: #fff;
+}
+
+.hazard-word-badge.ATENÇÃO,
+.hazard-word-badge.CUIDADO {
+  background: #f59e0b;
+  color: #111827;
+}
+
+.hazard-phrases {
+  font-size: 0.86rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.hazard-phrases ul {
+  list-style-type: square;
+  padding-left: 1.2rem;
+}
+
+.hazard-banner-diamonds {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Navegação rápida por seções da FDS */
+.fds-sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fds-section-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fds-section-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.fds-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fds-section-content {
+  font-size: 0.9rem;
+  color: #334155;
+  line-height: 1.65;
+}
+
+/* Rodapé do Modal */
+.modal-footer {
+  padding: 1rem 1.75rem;
+  background: #f8fafc;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   POPUP / MODAL DE RESUMO DE EMERGÊNCIA (Acesso Rápido)
+   ========================================================================== */
+.emergency-modal-window {
+  max-width: 680px;
+  border-color: #fca5a5;
+}
+
+.emergency-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.emergency-item {
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-amber);
+  border-radius: var(--radius-sm);
+  padding: 0.95rem;
+}
+
+.emergency-item.danger-border {
+  border-left-color: var(--accent-red);
+}
+
+.emergency-item-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.emergency-item-text {
+  font-size: 0.86rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+/* Botão de discagem direta para emergência */
+.emergency-call-card {
+  grid-column: 1 / -1;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.emergency-call-info h4 {
+  font-size: 0.92rem;
+  color: #991b1b;
+}
+
+.emergency-call-info p {
+  font-size: 0.8rem;
+  color: #b91c1c;
+}
+
+.btn-dial {
+  background: var(--accent-red);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.btn-dial:hover {
+  background: #b91c1c;
+}
+
+/* ==========================================================================
+   FOLHA DE ESTILO PARA IMPRESSÃO (ABNT / AUDITORIA / CAMPO)
+   ========================================================================== */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+
+  .header-top,
+  .hero-section,
+  .search-filter-wrapper,
+  .results-bar,
+  .cards-grid,
+  .main-footer,
+  .modal-header-controls,
+  .modal-footer {
+    display: none !important;
+  }
+
+  .modal-overlay {
+    position: static !important;
+    background: none !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .modal-window {
+    max-width: 100% !important;
+    max-height: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    transform: none !important;
+  }
+
+  .modal-header {
+    background: #f8fafc !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+
+  .modal-title {
+    color: #000000 !important;
+    font-size: 16pt !important;
+  }
+
+  .modal-subtitle {
+    color: #334155 !important;
+  }
+
+  .modal-body {
+    padding: 1rem 0 !important;
+    overflow: visible !important;
+  }
+
+  .fds-section-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #000000 !important;
+    page-break-inside: avoid;
+    margin-bottom: 0.8rem !important;
+    padding: 0.8rem !important;
+  }
+
+  .fds-section-title {
+    color: #0f172a !important;
+    border-bottom: 1px solid #94a3b8 !important;
+    font-size: 11pt !important;
+  }
+
+  .fds-section-content {
+    color: #1e293b !important;
+    font-size: 9.5pt !important;
+  }
+
+  .fds-hazard-banner {
+    border: 2px solid #dc2626 !important;
+    background: #fff5f5 !important;
+    color: #000000 !important;
+  }
+
+  .hazard-phrases {
+    color: #000000 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .emergency-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .modal-header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
