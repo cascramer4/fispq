@@ -1,4 +1,4 @@
-// Base de Dados Oficial: Os 4 Produtos Químicos Selecionados com Imagens e Links Diretos para o Google Drive
+// Base de Dados Oficial: Catálogo Completo de Produtos Químicos com FDS (16 Seções), Imagens e Links Diretos para o Google Drive
 const PRODUCTS_DATA = [
   {
     id: "prod-azolla-zs68",
@@ -479,6 +479,198 @@ const PRODUCTS_DATA = [
         conteudo: "Para acessar a FDS original do fornecedor, utilize o botão de visualização direta do Google Drive."
       }
     }
+  },
+  {
+    id: "prod-lubrax-utile-fpx220",
+    nome: "Óleo Lubrificante Industrial para Engrenagens e Redutores",
+    nomeComercial: "LUBRAX UTILE FPX 220",
+    fabricante: "Vibra Energia S.A.",
+    imagem: "img/lubrax_utile_fpx_220.jpg",
+    driveUrl: "https://drive.google.com/file/d/1SUVl3iHB7NQfKc0guaeDk1SeLkqAA_mv/view?usp=sharing",
+    categoria: "oleos",
+    categoriaLabel: "Óleos Hidráulicos & Motores",
+    formula: "Óleos básicos minerais parafínicos refinados (< 3% DMSO) com aditivos de extrema pressão (ISO VG 220)",
+    cas: "Mistura Mineral Refinada",
+    riscoGeral: "Baixo Risco",
+    corRisco: "safe",
+    descricao: "Óleo lubrificante industrial de alta viscosidade (ISO VG 220) para caixas de engrenagens fechadas, redutores planetários, mancais de deslizamento e rolamento sob cargas severas em perfuratrizes e centrais.",
+    pictogramas: ["shieldSafe"],
+    palavraAdvertencia: "CUIDADO",
+    frasesPerigo: [
+      "Produto químico não classificado como perigoso de acordo com a ABNT NBR 14725:2023",
+      "O contato prolongado sem EPI pode remover os óleos naturais da pele. Evite inalação sob aquecimento severo"
+    ],
+    episRecomendados: ["Luvas de Proteção em Nitrila ou PVC", "Óculos de Segurança com Proteção Lateral", "Botas com Solado Resistente a Óleos", "Uniforme com Mangas Longas"],
+    emergenciaResumo: {
+      olhos: "Lavar imediatamente com água corrente durante pelo menos 15 minutos mantendo as pálpebras abertas.",
+      pele: "Retirar roupas contaminadas e lavar a pele abundantemente com água e sabão neutro.",
+      inalacao: "Remover a pessoa para local arejado e fresco. Manter em repouso em posição confortável para respirar.",
+      ingestao: "NÃO PROVOCAR VÔMITO. Enxaguar a boca com água limpa em abundância. Chamar médico se houver mal-estar.",
+      incendio: "Usar água pulverizada (neblina), pó químico seco ABC, espuma para hidrocarbonetos ou CO2. Não usar jato maciço de água.",
+      vazamento: "Estancar vazamento com segurança. Absorver com areia ou terra inerte. Conter para evitar entrada em bueiros ou rios."
+    },
+    fdsCompleta: {
+      secao1: {
+        titulo: "1. Identificação do Produto e da Empresa",
+        conteudo: "<strong>Produto:</strong> LUBRAX UTILE FPX 220<br><strong>Código da FDS:</strong> 1017405 (Rev. 23/05/2025)<br><strong>Fabricante:</strong> Vibra Energia S.A.<br><strong>Endereço:</strong> Rua Correia Vasques, 250 - Rio de Janeiro/RJ<br><strong>Aplicação:</strong> Lubrificação de engrenagens fechadas, mancais e redutores pesados em equipamentos de fundação.<br><strong>SAC:</strong> 4090 1337 / 0800 770 1337 | <strong>Emergência CAE:</strong> 0800 024 44 33."
+      },
+      secao2: {
+        titulo: "2. Identificação de Perigos",
+        conteudo: "Produto químico não classificado como perigoso de acordo com a norma ABNT NBR 14725:2023. Elementos mandatórios de rotulagem GHS dispensados de obrigatoriedade."
+      },
+      secao3: {
+        titulo: "3. Composição e Informações sobre os Ingredientes",
+        conteudo: "<strong>Forma do produto:</strong> Mistura.<br>Os óleos minerais presentes no produto são altamente refinados e contêm &lt; 3% de extrato de DMSO (IP 346). Esta mistura não contém nenhuma substância perigosa acima dos limites de corte da ABNT NBR 14725."
+      },
+      secao4: {
+        titulo: "4. Medidas de Primeiros Socorros",
+        conteudo: "Em caso de mal-estar, consulte um médico. Se houver inalação de vapores aquecidos, remover a vítima para o ar fresco. Em contato dérmico, retirar roupas contaminadas e lavar com água em abundância. Em contato ocular, enxaguar com água limpa. Em caso de ingestão, NÃO provocar vômito e enxaguar a boca."
+      },
+      secao5: {
+        titulo: "5. Medidas de Combate a Incêndio",
+        conteudo: "<strong>Ponto de Fulgor:</strong> 246 °C (vaso aberto Cleveland). Não apresenta perigo direto de incêndio em temperatura ambiente.<br><strong>Meios de extinção recomendados:</strong> Água pulverizada/neblina, pó químico seco ABC, espuma para hidrocarbonetos e dióxido de carbono (CO2). Evitar jato d'água concentrado direto."
+      },
+      secao6: {
+        titulo: "6. Medidas de Controle para Derramamento ou Vazamento",
+        conteudo: "Interromper o vazamento se possível sem risco. Isolar a área. Absorver com barreiras de areia, terra ou mantas absorventes oleofílicas para evitar migração para galerias pluviais ou mananciais."
+      },
+      secao7: {
+        titulo: "7. Manuseio e Armazenamento",
+        conteudo: "Manusear com ventilação adequada, evitando formação de névoas. Conservar somente no recipiente original fechado, em local fresco, coberto e seco, ao abrigo da luz solar e longe de fontes de calor ou chamas abertas."
+      },
+      secao8: {
+        titulo: "8. Controle de Exposição e Proteção Individual (EPI)",
+        conteudo: "<strong>Limite de Tolerância Ocupacional:</strong> Névoa de óleo mineral (ACGIH 2024 TLV-TWA): 5 ppm.<br><strong>EPI Recomendado:</strong> Luvas de nitrila ou neoprene, óculos com vedação/proteção lateral, calçado com solado resistente a óleos e macacão de trabalho com mangas longas."
+      },
+      secao9: {
+        titulo: "9. Propriedades Físicas e Químicas",
+        conteudo: "<strong>Estado físico:</strong> Líquido límpido.<br><strong>Cor:</strong> Castanho claro.<br><strong>Viscosidade Cinemática a 40°C:</strong> 220 cSt (mm²/s) - ISO VG 220.<br><strong>Ponto de Fulgor:</strong> 246 °C (COC).<br><strong>Densidade Relativa:</strong> 0,89 (20/4°C)."
+      },
+      secao10: {
+        titulo: "10. Estabilidade e Reatividade",
+        conteudo: "Estável sob condições normais de uso e estocagem. Evitar contato com temperaturas extremas, chamas abertas e oxidantes fortes. Não gera produtos perigosos de decomposição à temperatura ambiente."
+      },
+      secao11: {
+        titulo: "11. Informações Toxicológicas",
+        conteudo: "Baixa toxicidade aguda. Mistura não contém ingredientes carcinogênicos (óleos de base mineral altamente refinados com &lt; 3% extrato DMSO conforme IP 346). O contato frequente e sem higienização pode causar ressecamento da pele."
+      },
+      secao12: {
+        titulo: "12. Informações Ecológicas",
+        conteudo: "Classificado como rapidamente degradável. Evitar o descarte direto no solo ou em cursos hídricos para não prejudicar pequenos organismos aquáticos."
+      },
+      secao13: {
+        titulo: "13. Considerações sobre Destinação Final",
+        conteudo: "O descarte de óleos lubrificantes usados (OLUC) é regulamentado pela Lei nº 12.305/2010 (PNRS) e Resolução CONAMA nº 362/05 com recolhimento obrigatório para rerrefino. Não descartar em esgotos nem no solo. Não reutilizar recipientes vazios."
+      },
+      secao14: {
+        titulo: "14. Informações sobre Transporte",
+        conteudo: "Não classificado como carga perigosa para transporte rodoviário regular segundo os critérios da ANTT (Resolução nº 5998/22), transporte marítimo (IMDG) ou aéreo (IATA)."
+      },
+      secao15: {
+        titulo: "15. Informações sobre Regulamentações",
+        conteudo: "Norma ABNT NBR 14725:2023 / Norma Regulamentadora NR-26 (Sinalização e Rotulagem) / Decreto Federal nº 10.088/2019 / Resolução ANTT nº 5998/2022."
+      },
+      secao16: {
+        titulo: "16. Outras Informações",
+        conteudo: "FDS oficial Vibra Energia nº 1017405 homologada. Arquivo PDF original completo disponível para consulta direta no Google Drive através do botão acima."
+      }
+    }
+  },
+  {
+    id: "prod-lubrax-hydra-xp68",
+    nome: "Óleo Hidráulico Antidesgaste de Alta Performance",
+    nomeComercial: "LUBRAX HYDRA XP 68",
+    fabricante: "Vibra Energia S.A.",
+    imagem: "img/lubrax_hydra_xp_68.jpg",
+    driveUrl: "https://drive.google.com/file/d/1r-tM3aAdS_SN2aUuA6IuTywNA_cCLV79/view?usp=sharing",
+    categoria: "oleos",
+    categoriaLabel: "Óleos Hidráulicos & Motores",
+    formula: "Óleos básicos minerais parafínicos refinados (ausentes de benzeno/tolueno/xileno) e antioxidante fenólico (ISO VG 68)",
+    cas: "Mistura Mineral / 128-39-2",
+    riscoGeral: "Baixo Risco",
+    corRisco: "safe",
+    descricao: "Óleo hidráulico antidesgaste de alta estabilidade térmica e oxidativa (ISO VG 68) para circuitos hidráulicos de alta pressão, bombas de palhetas, pistões e motores hidráulicos de perfuratrizes.",
+    pictogramas: ["shieldSafe"],
+    palavraAdvertencia: "CUIDADO",
+    frasesPerigo: [
+      "Produto químico não classificado como perigoso segundo a norma ABNT NBR 14725:2023",
+      "Atenção com injeção de óleo sob alta pressão na pele através de microfissuras em mangueiras hidráulicas"
+    ],
+    episRecomendados: ["Luvas de Nitrila ou Neoprene Resistentes a Óleos", "Óculos de Segurança com Vedação Lateral", "Botas com Biqueira e Solado de Poliuretano", "Macacão com Mangas Longas"],
+    emergenciaResumo: {
+      olhos: "Lavar imediatamente com água corrente durante pelo menos 15 minutos mantendo as pálpebras abertas.",
+      pele: "Lavar a pele com bastante água e sabão. ATENÇÃO: se houver injeção sob alta pressão na pele, procurar cirurgião com urgência!",
+      inalacao: "Remover a pessoa para ambiente fresco e arejado; manter em repouso e posição que facilite a respiração.",
+      ingestao: "NÃO INDUZIR VÔMITO. Enxaguar a boca com água limpa. Consultar médico imediatamente se sentir indisposição.",
+      incendio: "Usar água pulverizada, pó químico seco ABC, espuma para hidrocarbonetos ou CO2. Não usar jato maciço direto de água.",
+      vazamento: "Conter o líquido com barreiras de areia, terra ou mantas absorventes. Evitar que atinja redes de drenagem pluvial ou rios."
+    },
+    fdsCompleta: {
+      secao1: {
+        titulo: "1. Identificação do Produto e da Empresa",
+        conteudo: "<strong>Produto:</strong> LUBRAX HYDRA XP 68<br><strong>Código da FDS:</strong> 1002285 (Rev. 26/05/2025)<br><strong>Fabricante:</strong> Vibra Energia S.A.<br><strong>Endereço:</strong> Rua Correia Vasques, 250 - Rio de Janeiro/RJ<br><strong>Aplicação:</strong> Sistemas hidráulicos industriais e automotivos de máquinas de fundação operando sob alta pressão e esforço contínuo.<br><strong>SAC:</strong> 4090 1337 / 0800 770 1337 | <strong>Emergência CAE:</strong> 0800 024 44 33."
+      },
+      secao2: {
+        titulo: "2. Identificação de Perigos",
+        conteudo: "Produto químico não classificado como perigoso de acordo com a norma ABNT NBR 14725:2023. Elementos de rotulagem GHS dispensados de obrigatoriedade."
+      },
+      secao3: {
+        titulo: "3. Composição e Informações sobre os Ingredientes",
+        conteudo: "<strong>Forma do produto:</strong> Mistura.<br>Óleos minerais altamente refinados (&lt; 3% de extrato de DMSO - IP 346), ausentes de benzeno, tolueno e xileno. Contém 0,1% a 0,2% de 2,6-di-terc-butilfenol (CAS 128-39-2)."
+      },
+      secao4: {
+        titulo: "4. Medidas de Primeiros Socorros",
+        conteudo: "Em caso de mal-estar, consulte um médico. Se inalado, remover a vítima para o ar fresco. Se houver contato com a pele, lavar com bastante água e sabão. Se injetado acidentalmente sob alta pressão na pele, procurar imediatamente cirurgião vascular/ortopédico. Em contato com os olhos, enxaguar por 15 minutos. Se ingerido, NÃO induzir vômito."
+      },
+      secao5: {
+        titulo: "5. Medidas de Combate a Incêndio",
+        conteudo: "<strong>Ponto de Fulgor:</strong> 242 °C (COC). Não inflamável à temperatura ambiente.<br><strong>Meios de extinção:</strong> Água pulverizada/neblina, pó químico seco ABC, espuma mecânica e CO2. Não usar jato maciço direto de água."
+      },
+      secao6: {
+        titulo: "6. Medidas de Controle para Derramamento ou Vazamento",
+        conteudo: "Interromper o vazamento. Absorver com material inerte (areia, argila ou serragem). Evitar a penetração em galerias pluviais, córregos ou solo virgem."
+      },
+      secao7: {
+        titulo: "7. Manuseio e Armazenamento",
+        conteudo: "Manusear com ventilação adequada. Armazenar em local coberto, fresco, seco e protegido da luz solar direta, fontes de calor e faíscas. Manter tambores e baldes sempre fechados."
+      },
+      secao8: {
+        titulo: "8. Controle de Exposição e Proteção Individual (EPI)",
+        conteudo: "<strong>Limite Ocupacional:</strong> Névoa de óleo mineral (ACGIH 2024): 5 ppm.<br><strong>EPI Obrigatório:</strong> Luvas impermeáveis de nitrila ou neoprene, óculos com proteção lateral e calçado fechado com solado resistente a óleos minerais."
+      },
+      secao9: {
+        titulo: "9. Propriedades Físicas e Químicas",
+        conteudo: "<strong>Aspecto:</strong> Líquido límpido amarelado a castanho.<br><strong>Viscosidade Cinemática a 40°C:</strong> 63 cSt (mm²/s) - ISO VG 68.<br><strong>Ponto de Fulgor:</strong> 242 °C (COC).<br><strong>Densidade Relativa a 20°C:</strong> 0,88 (20/4°C)."
+      },
+      secao10: {
+        titulo: "10. Estabilidade e Reatividade",
+        conteudo: "Estável sob condições normais de uso e estocagem. Não reativo. Evitar temperaturas extremas e contato com agentes oxidantes fortes."
+      },
+      secao11: {
+        titulo: "11. Informações Toxicológicas",
+        conteudo: "Baixa toxicidade aguda dérmica e oral (DL50 dérmica &gt; 1000 mg/kg para aditivo fenólico). Produto isento de substâncias carcinogênicas (&lt; 3% DMSO IP 346)."
+      },
+      secao12: {
+        titulo: "12. Informações Ecológicas",
+        conteudo: "Classificado como rapidamente degradável. Produto não classificado como perigoso ao ambiente aquático segundo ensaios globais da mistura."
+      },
+      secao13: {
+        titulo: "13. Considerações sobre Destinação Final",
+        conteudo: "Descarte de acordo com a Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010) e Resolução CONAMA nº 362/05 (envio mandatório para rerrefino por coletor credenciado). Proibido despejo em esgoto ou solo."
+      },
+      secao14: {
+        titulo: "14. Informações sobre Transporte",
+        conteudo: "Não classificado como produto perigoso para fins de transporte rodoviário terrestre conforme a Resolução ANTT nº 5998/2022."
+      },
+      secao15: {
+        titulo: "15. Informações sobre Regulamentações",
+        conteudo: "Norma ABNT NBR 14725:2023 / Norma Regulamentadora NR-26 (Sinalização e Rotulagem) / Decreto Federal nº 10.088/2019 / Resolução ANTT nº 5998/2022."
+      },
+      secao16: {
+        titulo: "16. Outras Informações",
+        conteudo: "FDS oficial Vibra Energia nº 1002285 homologada. Documento PDF original completo disponível no Google Drive através do link de acesso direto."
+      }
+    }
   }
 ];
 
@@ -500,6 +692,14 @@ const GHS_PICTOGRAMS = {
         <path d="M42,47 L58,47 L65,65 L56,65 L54,58 L46,58 L44,65 L35,65 Z" />
         <polygon points="50,50 53,58 61,58 55,63 57,71 50,66 43,71 45,63 39,58 47,58" fill="#ffffff" />
       </g>
+    </svg>`
+  },
+  shieldSafe: {
+    label: "GHS: Produto Não Classificado como Perigoso (Isento de Rotulagem Mandatória NBR 14725:2023)",
+    icon: `<svg viewBox="0 0 100 100" class="ghs-diamond ghs-safe" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,4 96,50 50,96 4,50" fill="#ffffff" stroke="#10B981" stroke-width="8" stroke-linejoin="round" />
+      <path d="M50,23 L71,32 L71,53 C71,66 50,76 50,76 C50,76 29,66 29,53 L29,32 Z" fill="#ECFDF5" stroke="#059669" stroke-width="3.5" />
+      <path d="M42,50 L48,56 L60,42" fill="none" stroke="#059669" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>`
   }
 };
